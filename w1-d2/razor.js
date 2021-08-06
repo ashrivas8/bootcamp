@@ -20,6 +20,14 @@ class SelectorUtils {
 
     return this;
   }
+
+  value(val) {
+    this.elements.forEach(element => {
+      element.value = val;
+    });
+
+    return this;
+  }
 }
 
 function $razor(selector) {

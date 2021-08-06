@@ -14,10 +14,12 @@
       <div class='content'>Hello</div>
       <div class='content strong'>World</div>
     </section>
+    <input class='input' type="text" />
     <script>
       console.log($razor(".content").length);
       $razor('.content').addClass('bold');
       $razor('.content').removeClass('strong');
+      $razor('.input').value('123');
     </script>
   </body>
 </html>
