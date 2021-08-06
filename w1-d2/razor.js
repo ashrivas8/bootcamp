@@ -9,13 +9,24 @@ class SelectorUtils {
     this.elements.forEach(element => {
       element.classList.add(className);
     });
-    // return this.elements.classList;
+    
+    return this;
   }
 
   removeClass(className) {
     this.elements.forEach(element => {
       element.classList.remove(className);
     });
+
+    return this;
+  }
+
+  setProps(attr, value) {
+    this.elements.forEach(element => {
+      element.setAttribute(attr, value);
+    });
+
+    return this;
   }
 }
 
