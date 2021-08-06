@@ -5,9 +5,10 @@ class RazorSelector {
   }
 }
 
-function $razor(className) {
+function $razor(selector) {
   // const selectedElements
-  const elements = document.getElementsByClassName(className);
+  const elements = document.querySelectorAll(selector);
+  // console.log(elements);
   return new RazorSelector(elements);
 };
 
