@@ -9,7 +9,6 @@ class SelectorUtils {
     this.elements.forEach(element => {
       element.classList.add(className);
     });
-    // return this.elements.classList;
   }
 
   removeClass(className) {
@@ -26,4 +25,35 @@ function $razor(selector) {
   return new SelectorUtils(elements);
 };
 
-// document.addEventListener('DOMContentLoaded', $razor);
+$razor.setState = function(key, value, setInSession = false) {
+  if(typeof key !== 'string') {
+    throw new Error('Key should be a string!');
+  }
+  if (setInSession) {
+    sessionStorage.setItem(key, value);
+  }
+  else {
+    localStorage.setItem(key, value);
+  }
+};
+
+$razor.getState = function(key, setInSession = false) {
+  if(typeof key !== 'string') {
+    throw new Error('Key should be a string!');
+  }
+
+  if (setInSession) {
+    if (sessionStorage.getItem(key)) {
+      return sessionStorage.getItem(key);
+    }
+    else
+      throw new Error('Key not present in Session Storage');
+  }
+  else {
+    if (localStorage.getItem(key)) {
+      return localStorage.getItem(key);
+    }
+    else
+      throw new Error('Key not present in Local Storage');
+  }
+};

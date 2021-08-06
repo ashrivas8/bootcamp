@@ -18,6 +18,8 @@
       console.log($razor(".content").length);
       $razor('.content').addClass('bold');
       $razor('.content').removeClass('strong');
+      $razor.setState('key', 'value', true);
+      console.log($razor.getState('key', true));
     </script>
   </body>
 </html>
