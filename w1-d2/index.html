@@ -12,10 +12,12 @@
     <script src="razor.js"></script>
     <section>
       <div class='content'>Hello</div>
-      <div class='content'>World</div>
+      <div class='content strong'>World</div>
     </section>
     <script>
       console.log($razor(".content").length);
+      $razor('.content').addClass('bold');
+      $razor('.content').removeClass('strong');
     </script>
   </body>
 </html>
