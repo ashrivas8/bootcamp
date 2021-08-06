@@ -18,6 +18,13 @@
       console.log($razor(".content").length);
       $razor('.content').addClass('bold');
       $razor('.content').removeClass('strong');
+      function clickHandler() {
+        console.log('clicked');
+      }
+      $razor('.content').on('click', clickHandler);
+      setTimeout(() => {
+        $razor('.content').off('click', clickHandler);
+      }, 6000);
     </script>
   </body>
 </html>

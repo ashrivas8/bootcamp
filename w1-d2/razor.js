@@ -17,6 +17,18 @@ class SelectorUtils {
       element.classList.remove(className);
     });
   }
+
+  on(event, cb) {
+    this.elements.forEach(element => {
+      element.addEventListener(event, cb);
+    });
+  }
+
+  off(event, cb) {
+    this.elements.forEach(element => {
+      element.removeEventListener(event, cb)
+    });
+  }
 }
 
 function $razor(selector) {
